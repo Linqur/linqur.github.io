@@ -1,1 +1,0 @@
-# linqur.github.io
