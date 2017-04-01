@@ -62,10 +62,11 @@ body{
     font-family: 'ProximaNovaBlack', sans-serif;
   }
   .main-info h1:nth-child(1){
-    margin-top: 18%;
+    margin-top: 22vh;
   }
    h1{
-    font-size: 50px;
+    font-size: 5vh;
+    -ms-font-size: 50px;
     margin-bottom: 0;
     margin-top: 5px;
     font-weight: 900;
@@ -161,19 +162,21 @@ body{
     word-wrap: break-word;
   }
   h2{
-    margin-bottom: 2%;
-    font-size: 40px;
+    margin-bottom: 20px;
+    font-size: 4vh;
+    -ms-font-size: 40px;
     font-weight: 400;
   }
    h2>a{
-    font-size: 30px;
+     font-size: 3vh;
+    -ms-font-size: 30px;
   }
   .name{
     margin-bottom: 20px;
     white-space:  ;
   }
   .main-info h2:nth-child(3){
-    margin-top: 12%;
+    margin-top: 14vh;
   }
   .contact h2{
     margin: 0;
@@ -204,10 +207,12 @@ body{
     margin-top: 20px;
     font-weight: 700;
     margin-bottom: 20px;
-    font-size: 25px;
+    font-size: 2.5vh;
+    -ms-font-size: 25px;
   }
   h4 a{
-    font-size: 20px;
+    font-size: 2vh;
+    -ms-font-size: 20px;
     font-weight: lighter;
   }
   .tomat{
@@ -242,19 +247,19 @@ body{
   *****************/
   @media (max-width:1199px) {
     h1{
-     font-size: 35px;
+     -ms-font-size: 35px;
    }
     h2{
-      font-size: 28px;
+      -ms-font-size: 28px;
     }
     h2>a{
-      font-size: 21px;
+      -ms-font-size: 21px;
     }
     h4{
       font-size: 17.5px;
     }
     .tomat{
-      font-size: 17.5px;
+      -ms-font-size: 17.5px;
     }
     h4>a{
       font-size: 14px;
@@ -266,7 +271,7 @@ body{
       margin-top: 10%;
     }
     h1 .tomat{
-      font-size: 15px;
+      -ms-font-size: 15px;
     }
     h1 .tomat img{
     width: 17px;
@@ -286,14 +291,14 @@ body{
       line-height: 25px;
     }
     h1{
-     font-size: 30px;
+     -ms-font-size: 30px;
    }
     h2{
-      font-size: 24px;
+      -ms-font-size: 24px;
       text-align: center;
     }
     h2>a{
-      font-size: 18px;
+      -ms-font-size: 18px;
     }
     footer .container>div:nth-child(2),footer .container>div:nth-child(4){
       text-align: center;
@@ -310,5 +315,11 @@ body{
       margin-top: 5px;
       margin-bottom: 5px;
       line-height: 25px;
+    }
+    h1{
+     -ms-font-size: 26px;
+   }
+    h2{
+      -ms-font-size: 20px;
     }
   }
