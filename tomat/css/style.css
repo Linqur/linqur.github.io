@@ -264,12 +264,12 @@ body{
     h4>a{
       font-size: 14px;
     }
-    .main-info h1:nth-child(1){
+    /*.main-info h1:nth-child(1){
       margin-top: 15%;
     }
     .main-info h2:nth-child(3){
       margin-top: 10%;
-    }
+    }*/
     h1 .tomat{
       -ms-font-size: 15px;
     }
@@ -283,7 +283,7 @@ body{
   }
   @media(max-width:767px){
     .main-info h1:nth-child(1),.main-info h2:nth-child(3){
-      margin-top: 2%;
+      margin-top: 3vh;
     }
     h4{
       margin-top: 5px;
@@ -305,12 +305,12 @@ body{
     }
   }
   @media(max-width:450px){
-    .main-info{
+    /*.main-info{
       padding-top: 10px;
-    }
-    .main-info h2:nth-child(3){
+    }*/
+    /*.main-info h2:nth-child(3){
       margin-top: 30px;
-    }
+    }*/
     h4{
       margin-top: 5px;
       margin-bottom: 5px;
