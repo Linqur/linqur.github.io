@@ -90,11 +90,14 @@ body{
     font-size: 20px;
     border-radius: 7px;
     background: linear-gradient(to top, #fff 50%, #71db5c 50%);
+    -moz-background: linear-gradient(to left, #fff 50%, #71db5c 50%);
     background-size: 200%;
     background-position: bottom;
+    background-repeat: no-repeat;
+    -moz-background-position:100%;
+
     transition-duration: 0.2s;
     padding: 7px 12px;
-
   }
   h1 .tomat img{
     vertical-align: top;
@@ -111,6 +114,11 @@ body{
     background: linear-gradient(to left top,transparent 50%,#fff 50%);
     transform: rotate(45deg);
   }
+  h1 .tomat:hover{
+    color:#fb5353;
+    background-position: top;
+    -moz-background-position:0;
+  }
   .we{
     position: relative;
     display: inline-block;
@@ -125,10 +133,7 @@ body{
   .we:hover .drop-link{
     display: inline-block;
   }
-  h1 .tomat:hover{
-    color:#fb5353;
-    background-position: top;
-  }
+
   h1 .tomat:hover::before{
     background: linear-gradient(to left top,transparent 50%, #71db5c 50%);
   }
@@ -151,13 +156,6 @@ body{
     height: 3px;
     width: 90%;
   }
-  /*.decor>span{
-    display: inline-block;
-    width: 12%;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
-  }*/
   h1:nth-child(4){
     word-wrap: break-word;
   }
@@ -220,7 +218,6 @@ body{
     white-space: nowrap;
     font-weight: 700;
     position: relative;
-    vertical-align: bottom;
   }
   .tomat:hover{
     color:#eb3333;
@@ -231,10 +228,7 @@ body{
   .tomat img{
     display: inline-block;
     width: 22px;
-    vertical-align: middle;
-    /*position: absolute;
-    left:105%;
-    top:0;*/
+    vertical-align: -4px;
   }
   footer .container>div:nth-child(2){
     text-align: right;
@@ -256,20 +250,14 @@ body{
       -ms-font-size: 21px;
     }
     h4{
-      font-size: 17.5px;
+      -ms-font-size: 17.5px;
     }
     .tomat{
       -ms-font-size: 17.5px;
     }
     h4>a{
-      font-size: 14px;
+      -ms-font-size: 14px;
     }
-    /*.main-info h1:nth-child(1){
-      margin-top: 15%;
-    }
-    .main-info h2:nth-child(3){
-      margin-top: 10%;
-    }*/
     h1 .tomat{
       -ms-font-size: 15px;
     }
@@ -278,9 +266,10 @@ body{
     }
     .tomat img{
       width: 18px;
+      vertical-align:-2px;
+    }
   }
 
-  }
   @media(max-width:767px){
     .main-info h1:nth-child(1),.main-info h2:nth-child(3){
       margin-top: 3vh;
@@ -300,26 +289,24 @@ body{
     h2>a{
       -ms-font-size: 18px;
     }
+    h4>a{
+      font-size: 2.5vh;
+    }
     footer .container>div:nth-child(2),footer .container>div:nth-child(4){
       text-align: center;
     }
   }
   @media(max-width:450px){
-    /*.main-info{
-      padding-top: 10px;
-    }*/
-    /*.main-info h2:nth-child(3){
-      margin-top: 30px;
-    }*/
     h4{
-      margin-top: 5px;
-      margin-bottom: 5px;
-      line-height: 25px;
+      line-height: 20px;
     }
     h1{
      -ms-font-size: 26px;
    }
     h2{
       -ms-font-size: 20px;
+    }
+    .tomat img{
+      width: 15px;
     }
   }
