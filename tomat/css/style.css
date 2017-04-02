@@ -90,12 +90,10 @@ body{
     font-size: 20px;
     border-radius: 7px;
     background: linear-gradient(to top, #fff 50%, #71db5c 50%);
-    -moz-background: linear-gradient(to left, #fff 50%, #71db5c 50%);
+    transition-duration: 0.2s;
     background-size: 200%;
     background-position: bottom;
     background-repeat: no-repeat;
-    -moz-background-position:100%;
-
     transition-duration: 0.2s;
     padding: 7px 12px;
   }
@@ -117,7 +115,6 @@ body{
   h1 .tomat:hover{
     color:#fb5353;
     background-position: top;
-    -moz-background-position:0;
   }
   .we{
     position: relative;
@@ -155,9 +152,6 @@ body{
     left:3px;
     height: 3px;
     width: 90%;
-  }
-  h1:nth-child(4){
-    word-wrap: break-word;
   }
   h2{
     margin-bottom: 20px;
@@ -296,6 +290,7 @@ body{
       text-align: center;
     }
   }
+
   @media(max-width:450px){
     h4{
       line-height: 20px;
