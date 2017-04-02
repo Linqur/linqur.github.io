@@ -639,7 +639,9 @@ Education / Employement
   }
   .social{
     width: 100%;
-    background-size: 250%;
+    background-size:100% 200%;
+    background-position: bottom;
+    background-repeat: no-repeat;
     background-position: 0 99%;
     transition-duration: 0.4s;
     padding: 3% 0;
@@ -647,7 +649,7 @@ Education / Employement
     cursor: pointer;
   }
   .twit:hover, .facebook:hover, .google:hover{
-    background-position: 0 1%;
+    background-position: top;
   }
   .twit h4{
   }
