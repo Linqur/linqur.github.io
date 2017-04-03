@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/weather.css">
+    <title></title>
+  </head>
+  <body class="body-sun" id="start">
+    <div class="container">
+      <div class="row text-center">
+        <ul>
+          <li class="rain">
+            <div class="rain-move" id="rain">
+              <div class="round"></div>
+              <div class="whater" id="whater">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <i class="fa fa-cloud" id="icon"></i>
+            </div>
+          </li>
+          <li><div class="round"></div></li>
+          <li><div class="round"></div></li>
+          <li><div class="round"></div></li>
+          <li class="sun">
+            <div class="sun-move" id="sun">
+              <span class='ray'></span>
+              <span class='ray'></span>
+              <span class='ray'></span>
+              <span class='ray'></span>
+              <span class='ray'></span>
+              <span class='ray'></span>
+              <span class='ray'></span>
+              <span class='ray'></span>
+              <div class="round" id="yellow"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function weather() {
+        document.getElementById('start').className = 'body-sun';
+        document.getElementById('sun').className = 'active sun-move';
+        document.getElementById('yellow').className = 'yellow round';
+
+        setTimeout(function(){
+          document.getElementById('sun').className = 'sun-move';
+        }, 300);
+
+        setTimeout(function(){
+          document.getElementById('yellow').className = 'round';
+          document.getElementById('start').className = 'body-rain';
+          document.getElementById('rain').className = 'active rain-move';
+          document.getElementById('whater').className = 'active whater';
+          document.getElementById('icon').className = 'active fa fa-cloud';
+        }, 550);
+
+        setTimeout(function(){
+          document.getElementById('rain').className = 'rain-move';
+        }, 850);
+
+        setTimeout(function(){
+          document.getElementById('whater').className = 'whater';
+          document.getElementById('icon').className = 'fa fa-cloud';
+        }, 1100);
+      }
+      document.getElementById('start').onload = function() {
+        setInterval(function() {
+          weather();
+        }, 1100);
+      }
+    </script>
+  </body>
+</html>
