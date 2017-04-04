@@ -112,6 +112,7 @@
     width: 100%;
     padding: 7px;
     color:#000;
+    transition-duration: 0.25s;
   }
   .drop-menu ul a:hover, .drop-menu ul a:focus {
     text-decoration: none;
