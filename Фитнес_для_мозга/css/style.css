@@ -24,7 +24,11 @@ body{
   padding: 0;
   list-style: none;
 }
-
+.nav-thumb a{
+  color:#000;
+}
+.nav-thumb a:hover{
+}
 #contant{
   margin-top: 100px;
   height: 2000px;
