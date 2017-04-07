@@ -11,7 +11,8 @@
   <body>
     <div class="nav navbar-fixed-top nav-top">
       <div class="text-center">
-        <img src="https://placehold.it/400x240" alt="" width="100px">
+        <!-- <img src="https://placehold.it/400x240" alt="" width="100px"> -->
+        <h1>Фитнес для мозга</h1>
       </div>
     </div>
 
@@ -28,9 +29,10 @@
     <div id="contant" class="container">
       <div class="row">
         <div class="thumbnail contant-thumb">
-          <h1 id="memory">Игры на пямять</h1>
+          <div id="memory">
+            <h1>Игры на пямять</h1>
             <div class="item">
-              <h1>Развивающая игра</h1>
+              <h2>Развивающая игра</h2>
               <p>описание игры...</p>
               <div class="game-block text-center">
                 <img src="https://placehold.it/800x480" alt="">
@@ -46,41 +48,18 @@
               <hr>
             </div>
             <div class="item">
-              <h1>Развивающая игра</h1>
+              <h2>Развивающая игра</h2>
               <p>описание игры...</p>
               <div class="game-block text-center">
                 <img src="https://placehold.it/800x480" alt="">
               </div>
               <hr>
             </div>
-          <h1 id="logics">Игры на логику</h1>
+          </div>
+          <div id="logics">
+            <h1 >Игры на логику</h1>
             <div class="item">
-              <h1>Развивающая игра</h1>
-              <p>описание игры...</p>
-              <div class="game-block text-center">
-                <img src="https://placehold.it/800x480" alt="">
-              </div>
-              <hr>
-            </div>
-            <div class="item">
-              <h1>Развивающая игра</h1>
-              <p>описание игры...</p>
-              <div class="game-block text-center">
-                <img src="https://placehold.it/800x480" alt="">
-              </div>
-              <hr>
-            </div>
-            <div class="item">
-              <h1>Развивающая игра</h1>
-              <p>описание игры...</p>
-              <div class="game-block text-center">
-                <img src="https://placehold.it/800x480" alt="">
-              </div>
-              <hr>
-            </div>
-          <h1 id="attentiveness">Игры на внимательность</h1>
-            <div class="item">
-              <h1>Развивающая игра</h1>
+              <h2>Развивающая игра</h2>
               <p>описание игры...</p>
               <div class="game-block text-center">
                 <img src="https://placehold.it/800x480" alt="">
@@ -96,13 +75,41 @@
               <hr>
             </div>
             <div class="item">
-              <h1>Развивающая игра</h1>
+              <h2>Развивающая игра</h2>
               <p>описание игры...</p>
               <div class="game-block text-center">
                 <img src="https://placehold.it/800x480" alt="">
               </div>
               <hr>
             </div>
+          </div>
+          <div id="attentiveness">
+            <h1>Игры на внимательность</h1>
+            <div class="item">
+              <h2>Развивающая игра</h2>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+            <div class="item">
+              <h2>Развивающая игра</h2>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+            <div class="item">
+              <h2>Развивающая игра</h2>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -113,7 +120,7 @@
           event.preventDefault();
           var id  = $(this).attr('href'),
             top = $(id).offset().top;
-          $('body,html').animate({scrollTop: $(this.hash).offset().top - 80}, 700);
+          $('body,html').animate({scrollTop: $(this.hash).offset().top - 100}, 700);
         });
       });
     </script>
