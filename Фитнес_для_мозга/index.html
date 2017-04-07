@@ -113,7 +113,7 @@
           event.preventDefault();
           var id  = $(this).attr('href'),
             top = $(id).offset().top;
-          $('body,html').animate({scrollTop: top}, 700);
+          $('body,html').animate({scrollTop: $(this.hash).offset().top - 80}, 700);
         });
       });
     </script>
