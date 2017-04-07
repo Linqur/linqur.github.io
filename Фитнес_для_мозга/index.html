@@ -16,11 +16,11 @@
     </div>
 
     <div class="nav-left">
-      <div class="thumbnail nav-thumb">
+      <div class="thumbnail nav-thumb" id="navigator">
         <ul>
-          <li><a href="#"><h4>Игры на память</h4></a></li>
-          <li><a href="#"><h4>Игры на логику</h4></a></li>
-          <li><a href="#"><h4>Игры на внимательность</h4></a></li>
+          <li><a href="#memory"><h4>Игры на память</h4></a></li>
+          <li><a href="#logics"><h4>Игры на логику</h4></a></li>
+          <li><a href="#attentiveness"><h4>Игры на внимательность</h4></a></li>
         </ul>
       </div>
     </div>
@@ -28,32 +28,94 @@
     <div id="contant" class="container">
       <div class="row">
         <div class="thumbnail contant-thumb">
-          <div class="item">
-            <h1>Развивающая игра</h1>
-            <p>описание игры...</p>
-            <div class="game-block text-center">
-              <img src="https://placehold.it/800x480" alt="">
+          <h1 id="memory">Игры на пямять</h1>
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
             </div>
-            <hr>
-          </div>
-          <div class="item">
-            <h1>Развивающая игра</h1>
-            <p>описание игры...</p>
-            <div class="game-block text-center">
-              <img src="https://placehold.it/800x480" alt="">
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
             </div>
-            <hr>
-          </div>
-          <div class="item">
-            <h1>Развивающая игра</h1>
-            <p>описание игры...</p>
-            <div class="game-block text-center">
-              <img src="https://placehold.it/800x480" alt="">
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
             </div>
-            <hr>
-          </div>
+          <h1 id="logics">Игры на логику</h1>
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+          <h1 id="attentiveness">Игры на внимательность</h1>
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
+            <div class="item">
+              <h1>Развивающая игра</h1>
+              <p>описание игры...</p>
+              <div class="game-block text-center">
+                <img src="https://placehold.it/800x480" alt="">
+              </div>
+              <hr>
+            </div>
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).on('ready', function() {
+        $("#navigator").on("click","a", function (event) {
+          event.preventDefault();
+          var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+          $('body,html').animate({scrollTop: top}, 700);
+        });
+      });
+    </script>
   </body>
 </html>
