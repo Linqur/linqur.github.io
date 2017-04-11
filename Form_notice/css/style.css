@@ -57,6 +57,9 @@
  .check-text,.appointment button{
    opacity: 0.6;
  }
+ .check-blok{
+   width: 100%;
+ }
  /*checkbox*/
    .appointment input[type="checkbox"]{
      display: none;
@@ -80,10 +83,11 @@
      display: none;
    }
    /*check-active*/
-     .appointment input[type="checkbox"]:checked+.check i{
+     .appointment input[type="checkbox"]:checked+.check-blok .check i{
        display: inline;
      }
-     .appointment input[type="checkbox"]:checked~.check-text,.appointment input[type="checkbox"]:checked~.submit-pos button{
+     .appointment input[type="checkbox"]:checked+.check-blok .check-text,
+     .appointment input[type="checkbox"]:checked~.submit-pos button{
        opacity: 1;
      }
    /*check-active*/
