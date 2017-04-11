@@ -76,7 +76,17 @@ p{
   margin-top: 0;
 }
 .game-block{
+  overflow: hidden;
+  position: relative;
+  width: 669px;
+  height: 533px;
+  margin: 0 auto;
   margin-top: 20px;
+}
+iframe{
+  top:-284px;
+  left:-29px;
+  position: absolute;
 }
 .item>hr{
   width: 100%;
