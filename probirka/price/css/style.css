@@ -76,8 +76,6 @@
     }
     th.active{
       background-color: #5aa7ed;
-      border-left: none;
-      border-right: none;
     }
     .hover-col:hover{
       background-color: #f1f1f1 !important;
@@ -95,7 +93,7 @@
       left:-1px;
     }
     th.active::after{
-      right:-1px
+      right:-1px;
     }
     td.active{
       background-color: #fff;

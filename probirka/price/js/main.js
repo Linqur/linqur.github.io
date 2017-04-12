@@ -35,7 +35,7 @@
             .addClass('active');
         }
     }
-    
+
     function col_hover_off(id,e) {
         for(var i = 0; i < this.length; i++){
           $(this[i])
@@ -43,7 +43,7 @@
         }
     }
 
-    for(var i = 1; i < 4; i++) {
+    for(var i = 1; i < col_1.length; i++) {
       col_1[i].addEventListener('mouseover', col_hover.bind(col_1,i));
       col_2[i].addEventListener('mouseover', col_hover.bind(col_2,i));
       col_3[i].addEventListener('mouseover', col_hover.bind(col_3,i));
