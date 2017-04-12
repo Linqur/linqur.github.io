@@ -25,12 +25,10 @@
     .price-table th,.price-table td {
       border: 1px solid #dee2e4;
       padding: 15px;
+      position: relative;
     }
     .price-table tr{
       position: relative;
-    }
-    .price-table td{
-      z-index: 2;
     }
   /*границы таблицы*/
 
@@ -101,8 +99,5 @@
     }
     td.active{
       background-color: #fff;
-    }
-    td.active,th.active{
-      position: relative;
     }
   /*заливка столбца при ховере*/

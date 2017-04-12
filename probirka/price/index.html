@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <title></title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title></title>  
   </head>
   <body>
     <div class="content">
@@ -48,41 +47,7 @@
       </table>
     </div>
 
-    <script src="js/main.js">
-
-    </script>
-    <script type="text/javascript">
-
-    col_1 = document.getElementsByClassName('col-1');
-    col_2 = document.getElementsByClassName('col-2');
-    col_3 = document.getElementsByClassName('col-3');
-    col_4 = document.getElementsByClassName('col-4');
-
-    function col_hover(id,e) {
-        for(var i = 0; i < this.length; i++){
-          $(this[i])
-            .addClass('active');
-        }
-    }
-    for(var i = 1; i < 4; i++) {
-      col_1[i].addEventListener('mouseover', col_hover.bind(col_1,i));
-      col_2[i].addEventListener('mouseover', col_hover.bind(col_2,i));
-      col_3[i].addEventListener('mouseover', col_hover.bind(col_3,i));
-      col_4[i].addEventListener('mouseover', col_hover.bind(col_4,i));
-    }
-
-    // function col_hover_off(id,e) {
-    //     for(var i = 0; i < this.length; i++){
-    //       $(this[i])
-    //         .removeClass('active');
-    //     }
-    // }
-    // for(var i = 1; i < 4; i++) {
-    //   col_1[i].addEventListener('mouseout', col_hover_off.bind(col_1,i));
-    //   col_2[i].addEventListener('mouseout', col_hover_off.bind(col_2,i));
-    //   col_3[i].addEventListener('mouseout', col_hover_off.bind(col_3,i));
-    //   col_4[i].addEventListener('mouseout', col_hover_off.bind(col_4,i));
-    // }
-    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
