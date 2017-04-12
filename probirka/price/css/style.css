@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-  body{
-    background-color: #fafafa;
-    font-family: 'Roboto', sans-serif;
-  }
   .content{
     width: 100%;
   }
@@ -13,6 +9,7 @@
       font-weight: 500;
       font-size: 20px;
       text-align: center;
+      font-family: 'Roboto', sans-serif;
     }
   /*название таблицы*/
 
@@ -21,6 +18,7 @@
       border-spacing: 0;
       border-collapse: collapse;
       overflow: hidden;
+      font-family: 'Roboto', sans-serif;
     }
     .price-table th,.price-table td {
       border: 1px solid #dee2e4;
@@ -32,27 +30,42 @@
     }
   /*границы таблицы*/
 
-  /*шапка таблицы*/
-    .top-captions th{
-      background-color: #1977cc;
-      color:#fff;
-      width:15%;
-      position: relative;
-    }
-    .price-table th:first-child{
-      background-color:transparent;
-    }
-  /*шапка таблицы*/
+  /*содержимое таблицы*/
+    /*шапка таблицы*/
+      .top-captions th{
+        background-color: #1977cc;
+        color:#fff;
+        width:15%;
+        position: relative;
+      }
+      .price-table th:first-child{
+        background-color:transparent;
+      }
+    /*шапка таблицы*/
 
-  /*левый столбец таблицы*/
-    .left-caption{
-      text-align: left;
+    /*левый столбец таблицы*/
+      .left-caption{
+        text-align: left;
+        font-size: 14px;
+      }
+      .medium-size{
+        font-weight: 400;
+      }
+      .upper-size{
+        font-size: 16px;
+      }
+    /*левый столбец таблицы*/
+    .price-table td{
+      font-weight: 500;
+      text-align: center;
     }
-    .medium-size{
-      font-weight: 400;
-      font-size: 14px;
+    .price-table .blue-price{
+      color: #1977cc;
     }
-  /*левый столбец таблицы*/
+    .price-table img{
+      width: 30px;
+    }
+  /*содержимое таблицы*/
 
   /*заливка поля при ховере*/
     .price-table tr.active{
@@ -66,9 +79,9 @@
       top:-1px;
       left:-1px;
       border: 1px solid transparent;
-      height: 1000%;
+      height: 2000px;
       width: 100%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
       display: none;
     }
     .active>.shadow{
@@ -77,9 +90,9 @@
     th.active{
       background-color: #5aa7ed;
     }
-    .hover-col:hover{
+    /*.hover-col:hover{
       background-color: #f1f1f1 !important;
-    }
+    }*/
     th.active::before,th.active::after{
       content: '';
       display: block;
@@ -94,8 +107,5 @@
     }
     th.active::after{
       right:-1px;
-    }
-    td.active{
-      background-color: #fff;
     }
   /*заливка столбца при ховере*/
