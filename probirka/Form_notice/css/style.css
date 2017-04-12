@@ -4,14 +4,14 @@
     margin-left: 100px;
   }
   /*форма*/
-  .appointment-caption{
-    font-family: 'Roboto', sans-serif;
-  }
- .appointment{
-   background: linear-gradient(to top, #eee, #fafafa);
-   padding: 30px;
-   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
- }
+    .appointment-caption{
+      font-family: 'Roboto', sans-serif;
+    }
+   .appointment{
+     background: linear-gradient(to top, #eee, #fafafa);
+     padding: 30px;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+   }
  /*форма*/
 
  /*поля*/
@@ -21,78 +21,87 @@
      border: none;
      border-radius: 5px;
      box-shadow: inset  0 1px 5px rgba(0,0,0,0.2);
-     font-size: 20px;
-     font-family: 'Roboto', sans-serif;
-     color: #737373;
-     padding-left: 3px;
+     font-size: 16px;
+     padding: 0 7px ;
+   }
+   .appointment input[type="text"]{
+     height: 40px;
+   }
+   .appointment textarea{
+     height: 80px;
+     padding: 7px;
    }
  /*поля*/
 
  /*названия полей*/
-   .appointment span{
+   .appointment .field-caption{
      margin-top: 20px;
      display: inline-block;
+     font-size: 14px;
+     font-weight: normal;
    }
-   .appointment span:first-child{
+   .appointment .field-caption:first-child{
      margin-top: 0;
    }
  /*названия полей*/
 
- .appointment span,.check-text{
+ .appointment .field-caption,.check-text{
    font-family: 'Roboto', sans-serif;
-   font-size: 14px;
    color: #737373;
  }
 
  /*Чек*/
- .check-text{
-   display: inline-block;
-   width: 93%;
-   padding-left: 7px;
-   font-size: 13px;
- }
- .appointment input[type="text"]{
- }
- .check-text a{
-   white-space: nowrap;
- }
- .check-text,.appointment button{
-   opacity: 0.6;
- }
- .check-blok{
-   width: 100%;
- }
- /*checkbox*/
-   .appointment input[type="checkbox"]{
-     display: none;
+   .check-blok{
+     position: relative;
+     padding: 15px 0;
    }
-   .check{
+   .check-text{
      display: inline-block;
-     width: 20px;
-     height: 20px;
-     border-radius: 3px;
-     border: 1px solid #ccc;
-     box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
-     background-color:#fff;
-     cursor: pointer;
-     text-align: center;
-     color:#4b9ce4;
-     font-size: 17px;
-     float:left;
-     margin-top: 15px;
+     padding-left: 30px;
+     font-size: 13px;
    }
-   .check i{
-     display: none;
+   .appointment input[type="text"]{
    }
-   /*check-active*/
-     .appointment input[type="checkbox"]:checked+.check-blok .check i{
-       display: inline;
+   .check-text a{
+     white-space: nowrap;
+     color:#5d9ee8;
+   }
+   .check-text{
+     opacity: 0.6;
+   }
+   /*checkbox*/
+     .appointment input[type="checkbox"]{
+       display: none;
      }
-     .appointment input[type="checkbox"]:checked+.check-blok .check-text{
-       opacity: 1;
+     .check{
+       display: block;
+       width: 20px;
+       height: 20px;
+       border-radius: 3px;
+       border: 1px solid #ccc;
+       box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
+       background-color:#fff;
+       cursor: pointer;
+       position:absolute;
+       top:15px;
+       left:0;
+       z-index: 2;
      }
-   /*check-active*/
-/*checkbox*/
+     .check img{
+       display: none;
+       margin-left: 3px;
+       vertical-align: middle;
+       user-select:none;
+     }
+     /*check-active*/
+       .appointment input[type="checkbox"]:checked+.check-blok .check img{
+         display: inline-block;
+       }
+       .appointment input[type="checkbox"]:checked+.check-blok .check-text{
+         opacity: 1;
+       }
+     /*check-active*/
+  /*checkbox*/
 
    .appointment hr{
      border:none;
@@ -100,7 +109,7 @@
      height: 1px;
      background-color: #fff;
    }
-   
+
    /*Кнопка*/
      .submit-pos{
        text-align: center;
@@ -108,7 +117,7 @@
        margin-bottom: 0;
      }
      .appointment button{
-       background-color: #f34916;
+       background: #bbb;
        color: #fff;
        padding: 15px 25px;
        border: none;
@@ -119,6 +128,7 @@
      }
      /*События кнопки, активны только когда включен чекбокс*/
        .appointment input[type="checkbox"]:checked~.submit-pos button{
+         background: #f34916;
          cursor: pointer;
          opacity: 1;
        }
