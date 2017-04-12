@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+  body{
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif;
+  }
+  .content{
+    width: 100%;
+  }
+
+  /*название таблицы*/
+    .table-caption{
+      margin-bottom: 30px;
+      font-weight: 500;
+      font-size: 20px;
+      text-align: center;
+    }
+  /*название таблицы*/
+
+  /*границы таблицы*/
+    .price-table{
+      border-spacing: 0;
+      border-collapse: collapse;
+      overflow: hidden;
+    }
+    .price-table th,.price-table td {
+      border: 1px solid #dee2e4;
+      padding: 15px;
+    }
+    .price-table tr{
+      position: relative;
+    }
+    .price-table td{
+      z-index: 2;
+    }
+  /*границы таблицы*/
+
+  /*шапка таблицы*/
+    .top-captions th{
+      background-color: #1977cc;
+      color:#fff;
+      width:15%;
+      position: relative;
+    }
+    .price-table th:first-child{
+      background-color:transparent;
+    }
+  /*шапка таблицы*/
+
+  /*левый столбец таблицы*/
+    .left-caption{
+      text-align: left;
+    }
+    .medium-size{
+      font-weight: 400;
+      font-size: 14px;
+    }
+  /*левый столбец таблицы*/
+
+  /*заливка поля при ховере*/
+    .price-table tr.active{
+        background: #f1f1f1;
+    }
+  /*заливка поля при ховере*/
+
+  /*заливка столбца при ховере*/
+    .shadow{
+      position: absolute;
+      top:-1px;
+      left:-1px;
+      border: 1px solid transparent;
+      height: 1000%;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      display: none;
+    }
+    .active>.shadow{
+      display: block;
+    }
+    th.active{
+      background-color: #5aa7ed;
+      border-left: none;
+      border-right: none;
+    }
+    .hover-col:hover{
+      background-color: #f1f1f1 !important;
+    }
+    th.active::before,th.active::after{
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      top:0;
+      background-color: #5aa7ed;
+    }
+    th.active::before{
+      left:-1px;
+    }
+    th.active::after{
+      right:-1px
+    }
+    td.active{
+      background-color: #fff;
+    }
+    td.active,th.active{
+      position: relative;
+    }
+  /*заливка столбца при ховере*/

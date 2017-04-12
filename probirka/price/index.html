@@ -7,6 +7,83 @@
     <title></title>
   </head>
   <body>
+    <div class="content">
+      <h3 class="table-caption">Программы ЭКО с яйцеклетками пациентки</h3>
+      <table class="price-table">
+        <tr class="top-captions">
+          <th class="left-caption"></th>
+          <th class="col-1">
+            <div class="shadow"></div>
+            ЭКО <br> лайт
+          </th>
+          <th class="col-2">
+            <div class="shadow"></div>
+            ЭКО <br> Классическое</th>
+          <th class="col-3">
+            <div class="shadow"></div>
+            ЭКО <br> полный цикл</th>
+          <th class="col-4">
+            <div class="shadow"></div>
+            ЭКО <br> Безлимитное</th>
+        </tr>
 
+        <tr>
+          <th class="left-caption medium-size">Обследование пары
+            перед программой ЭКО</th>
+          <td class="hover-col col-1"></td>
+          <td class="hover-col col-2"></td>
+          <td class="hover-col col-3"></td>
+          <td class="hover-col col-4"></td>
+        </tr>
+
+        <tr>
+          <th class="left-caption medium-size">Лекарства для стимуляции яичинков</th>
+          <td class="hover-col col-1"></td>
+          <td class="hover-col col-2"></td>
+          <td class="hover-col col-3"></td>
+          <td class="hover-col col-4"></td>
+        </tr>
+
+      </table>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="js/main.js">
+
+
+    </script>
+    <script type="text/javascript">
+    
+    col_1 = document.getElementsByClassName('col-1');
+    col_2 = document.getElementsByClassName('col-2');
+    col_3 = document.getElementsByClassName('col-3');
+    col_4 = document.getElementsByClassName('col-4');
+
+    function col_hover(id,e) {
+        for(var i = 0; i < this.length; i++){
+          $(this[i])
+            .addClass('active');
+        }
+    }
+    for(var i = 1; i < 4; i++) {
+      col_1[i].addEventListener('mouseover', col_hover.bind(col_1,i));
+      col_2[i].addEventListener('mouseover', col_hover.bind(col_2,i));
+      col_3[i].addEventListener('mouseover', col_hover.bind(col_3,i));
+      col_4[i].addEventListener('mouseover', col_hover.bind(col_4,i));
+    }
+
+    // function col_hover_off(id,e) {
+    //     for(var i = 0; i < this.length; i++){
+    //       $(this[i])
+    //         .removeClass('active');
+    //     }
+    // }
+    // for(var i = 1; i < 4; i++) {
+    //   col_1[i].addEventListener('mouseout', col_hover_off.bind(col_1,i));
+    //   col_2[i].addEventListener('mouseout', col_hover_off.bind(col_2,i));
+    //   col_3[i].addEventListener('mouseout', col_hover_off.bind(col_3,i));
+    //   col_4[i].addEventListener('mouseout', col_hover_off.bind(col_4,i));
+    // }
+    </script>
   </body>
 </html>
