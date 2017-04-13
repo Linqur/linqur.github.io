@@ -25,9 +25,6 @@
       padding: 15px;
       position: relative;
     }
-    .price-table tr{
-      position: relative;
-    }
   /*границы таблицы*/
 
   /*содержимое таблицы*/
@@ -36,7 +33,6 @@
         background-color: #1977cc;
         color:#fff;
         width:15%;
-        position: relative;
       }
       .price-table th:first-child{
         background-color:transparent;
@@ -58,18 +54,31 @@
     .price-table td{
       font-weight: 500;
       text-align: center;
+        white-space: nowrap;
     }
     .price-table .blue-price{
       color: #1977cc;
     }
-    .price-table img{
+    /*.price-table img{
       width: 30px;
+    }*/
+    @media(max-width:671px){
+      .scroll{
+        overflow-x:scroll;
+      }
+      .price-table td {
+        /*min-width: 700px;*/
+
+      }
     }
   /*содержимое таблицы*/
 
   /*заливка поля при ховере*/
-    .price-table tr.active{
-        background: #f1f1f1;
+    .price-table tr:hover{
+        background-color: #f1f1f1;
+    }
+    .price-table tr:first-child:hover{
+      background-color: transparent;
     }
   /*заливка поля при ховере*/
 
@@ -90,9 +99,6 @@
     th.active{
       background-color: #5aa7ed;
     }
-    /*.hover-col:hover{
-      background-color: #f1f1f1 !important;
-    }*/
     th.active::before,th.active::after{
       content: '';
       display: block;
