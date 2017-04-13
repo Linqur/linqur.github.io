@@ -59,16 +59,9 @@
     .price-table .blue-price{
       color: #1977cc;
     }
-    /*.price-table img{
-      width: 30px;
-    }*/
     @media(max-width:671px){
       .scroll{
         overflow-x:scroll;
-      }
-      .price-table td {
-        /*min-width: 700px;*/
-
       }
     }
   /*содержимое таблицы*/
