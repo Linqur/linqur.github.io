@@ -129,7 +129,7 @@
       font-weight: bold;
     }
     button[disabled],button[disabled]:hover{
-      background-color: #aaa;
+      background-color: #003c58;
       cursor: auto;
     }
     .calc-ques input[type="radio"]:checked+li label{

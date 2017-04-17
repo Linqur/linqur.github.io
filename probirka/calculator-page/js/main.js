@@ -17,19 +17,33 @@ document.getElementById('drop_list').onclick = function() {
 }
 /*список в имитации селекта*/
 
-/*пере*/
-document.getElementById('next').onclick = function() {
+/*перебор значений селекта*/
+  var opt =   document.getElementById('select').options;
+
+  function disabled_select_buttons(){
+    if ( !opt[0].selected || !opt[opt.length-1] ){
+      document.getElementById('next').removeAttribute('disabled');
+      document.getElementById('prev').removeAttribute('disabled');
+    }
+    if (opt[0].selected){
+      document.getElementById('prev').setAttribute('disabled', 'true');
+    }
+    if (opt[opt.length-1].selected) {
+      document.getElementById('next').setAttribute('disabled', 'true');
+    }
+  }
+
+  document.getElementById('select').onclick = function(){
+    disabled_select_buttons();
+  }
+
+  document.getElementById('next').onclick = function() {
   document.getElementById('next').removeAttribute('disabled');
   document.getElementById('prev').removeAttribute('disabled');
-  var opt = document.getElementsByClassName('long_pregnant');
   for( i = 0 ; i < opt.length ; i++ ){
     if( opt[i].selected ){
-      opt[i].removeAttribute('selected');
-      opt[i+1].setAttribute('selected', '');
-      if( opt[opt.length-1].selected ){
-        document.getElementById('next').setAttribute('disabled', 'true');
-        break;
-      }
+      opt[i+1].selected = true;
+      disabled_select_buttons();
       break;
     }
   }
@@ -37,17 +51,12 @@ document.getElementById('next').onclick = function() {
 document.getElementById('prev').onclick = function() {
   document.getElementById('next').removeAttribute('disabled');
   document.getElementById('prev').removeAttribute('disabled');
-  var opt = document.getElementsByClassName('long_pregnant');
   for( i = 0 ; i < opt.length ; i++ ){
     if(  opt[i].selected ){
-      opt[i].removeAttribute('selected');
-      opt[i-1].setAttribute('selected', '');
-      if( opt[0].selected ) {
-        document.getElementById('prev').setAttribute('disabled', 'true');
-        break;
-      }
+      opt[i-1].selected = true;
+      disabled_select_buttons();
       break;
     }
   }
 }
-/**/
+/*перебор значений селекта*/
