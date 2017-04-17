@@ -21,10 +21,8 @@ document.getElementById('drop_list').onclick = function() {
   var opt =   document.getElementById('select').options;
 
   function disabled_select_buttons(){
-    if ( !opt[0].selected || !opt[opt.length-1] ){
       document.getElementById('next').removeAttribute('disabled');
       document.getElementById('prev').removeAttribute('disabled');
-    }
     if (opt[0].selected){
       document.getElementById('prev').setAttribute('disabled', 'true');
     }
@@ -33,13 +31,11 @@ document.getElementById('drop_list').onclick = function() {
     }
   }
 
-  document.getElementById('select').onclick = function(){
+  document.getElementById('select').addEventListener('change', function(e) {
     disabled_select_buttons();
-  }
+  })
 
   document.getElementById('next').onclick = function() {
-  document.getElementById('next').removeAttribute('disabled');
-  document.getElementById('prev').removeAttribute('disabled');
   for( i = 0 ; i < opt.length ; i++ ){
     if( opt[i].selected ){
       opt[i+1].selected = true;
@@ -49,8 +45,6 @@ document.getElementById('drop_list').onclick = function() {
   }
 }
 document.getElementById('prev').onclick = function() {
-  document.getElementById('next').removeAttribute('disabled');
-  document.getElementById('prev').removeAttribute('disabled');
   for( i = 0 ; i < opt.length ; i++ ){
     if(  opt[i].selected ){
       opt[i-1].selected = true;
