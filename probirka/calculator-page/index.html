@@ -167,67 +167,7 @@
       </div>
     </form>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
-      var list = document.getElementById('drop_list');
-      document.getElementById('droper_list').onclick = function() {
-        if( list.className == 'drop-list hidden' ){
-          $(list).removeClass('hidden');
-          $(list).addClass('active');
-        }
-        else{
-          $(list).removeClass('active');
-          $(list).addClass('hidden');
-        }
-      }
-
-      document.getElementById('drop_list').onclick = function() {
-        $(list).removeClass('active');
-        $(list).addClass('hidden');
-      }
-
-      document.getElementById('next').onclick = function() {
-        var opt = document.getElementsByClassName('long_pregnant');
-        for( i = 0 ; i < opt.length ; i++ ){
-          if(  opt[i].selected ){
-            if( opt[opt.length-1].selected ){
-              document.getElementById('next').setAttribute('disabled', 'true');
-              break;
-            }
-            opt[i].removeAttribute('selected');
-            opt[i+1].setAttribute('selected', '');
-            document.getElementById('next').removeAttribute('disabled');
-            document.getElementById('prev').removeAttribute('disabled');
-            break;
-          }
-        }
-      }
-      document.getElementById('prev').onclick = function() {
-        var opt = document.getElementsByClassName('long_pregnant');
-        for( i = 0 ; i < opt.length ; i++ ){
-          if(  opt[0].selected ) {
-            document.getElementById('prev').setAttribute('disabled', 'true');
-            break;
-          }
-          if(  opt[i].selected ){
-            opt[i].removeAttribute('selected');
-            opt[i-1].setAttribute('selected', '');
-            document.getElementById('prev').removeAttribute('disabled');
-            document.getElementById('next').removeAttribute('disabled');
-            break;
-          }
-        }
-      }
-        // $('#select_1').mousedown(function(event) {
-        //   if (event.which == 3) {
-        //     var a = $(this).children().filter(':selected').index();
-        //     $(this).find('option:eq('+ (a+1) +')').attr("selected","selected");
-        //   }
-        // });
-      // document.getElementById('next').onclick = function() {
-      //   var sel = document.getElementById('select_1');
-      //     var a = $(sel).children().filter(':selected').index();
-      //     $(sel).find('option:eq('+ (a+1) +')').attr("selected","selected");
-      // };
+    <script src="js/main.js">
     </script>
   </body>
 </html>
