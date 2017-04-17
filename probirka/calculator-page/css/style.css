@@ -104,10 +104,7 @@
     .calc-ques ul li:nth-child(2){
         margin-right: 40px;
     }
-    .select-but{
-      margin-right: 10px !important;
-    }
-    .calc-ques label{
+    .calc-ques label,.select-but{
       display: inline-block;
       width: 50px;
       height: 50px;
@@ -120,8 +117,16 @@
       box-sizing: border-box;
       font-weight: 500;
     }
-    .calc-ques label:hover{
+    .calc-ques label:hover,.select-but:hover{
       background-color: #007e97;
+    }
+    .select-but{
+      padding-top: 3px;
+      margin-right: 10px;
+      border:0;
+      outline: none;
+      font-size:20px;
+      font-weight: bold;
     }
     .calc-ques input[type="radio"]:checked+li label{
       background-color: #007e97;
@@ -184,7 +189,6 @@
       .drop-list{
         position: absolute;
         list-style: none;
-        /*width: 100%;*/
         left: -1px;
         right: -1px;
         top:47px;
@@ -232,6 +236,8 @@
         height: 100%;
         width: 34px;
         border-left:1px solid #aaa;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
         background-color: #fff;
         cursor: pointer;
       }
@@ -260,13 +266,15 @@
         cursor: pointer;
         z-index: 1;
         color: #aaa;
+        border-top-left-radius:5px;
+        border-bottom-left-radius:5px;
       }
       .select-stub{
         position: absolute;
         top:0;
         left:0;
         height: 50px;
-        width:135px;
+        width:134px;
         z-index: 2;
       }
     /*селект*/

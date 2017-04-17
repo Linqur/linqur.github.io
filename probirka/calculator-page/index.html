@@ -71,39 +71,38 @@
                 </ul>
               </div>
                 <ul>
-                  <li class="select-but"><label for="select_age">-</label></li>
-                  <li class="select-but"><label for="select_age">+</label></li>
+                  <li><button type="button" class="select-but">-</button></li>
+                  <li><button type="button" class="select-but">+</button></li>
                 </ul>
                 <p clss="ques-caption">Сколько лет вы пытаетесь забеременеть?</p>
                 <div class="select-blok droper">
                   <select id="select_1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>18</option>
-                    <option>19</option>
-                    <option>20</option>
+                    <option class="long_pregnant" value="1">1</option>
+                    <option class="long_pregnant" value="2">2</option>
+                    <option class="long_pregnant" value="3">3</option>
+                    <option class="long_pregnant" value="4">4</option>
+                    <option class="long_pregnant" value="5">5</option>
+                    <option class="long_pregnant" value="6">6</option>
+                    <option class="long_pregnant" value="7">7</option>
+                    <option class="long_pregnant" value="8">8</option>
+                    <option class="long_pregnant" value="9">9</option>
+                    <option class="long_pregnant" value="10">10</option>
+                    <option class="long_pregnant" value="11">11</option>
+                    <option class="long_pregnant" value="12">12</option>
+                    <option class="long_pregnant" value="13">13</option>
+                    <option class="long_pregnant" value="14">14</option>
+                    <option class="long_pregnant" value="15">15</option>
+                    <option class="long_pregnant" value="16">16</option>
+                    <option class="long_pregnant" value="17">17</option>
+                    <option class="long_pregnant" value="18">18</option>
+                    <option class="long_pregnant" value="19">19</option>
+                    <option class="long_pregnant" value="20">20</option>
                   </select>
                   <div class="select-stub"></div>
-                  <!-- <label  class="drop-selcet drop-selcet-select" for="select_1"></label> -->
                 </div>
                 <ul>
-                  <li class="select-but"><label for="select_1">-</label></li>
-                  <li class="select-but"><label for="select_1">+</label></li>
+                  <li><button type="button" class="select-but" id="prev" disabled="true">-</button></li>
+                  <li><button type="button" class="select-but" id="next">+</button></li>
                 </ul>
             </div>
 
@@ -123,19 +122,6 @@
                 <li><label for="ques_4_2">НЕТ</label></li>
               </ul>
             </div>
-
-
-            <!-- <div class="calc-ques">
-              <p clss="ques-caption">Есть ли у вас проблемы мужского фактора бесплодия?</p>
-              <ul>
-                <input type="radio" name="ques-4" id="ques_4_1">
-                <li><label for="ques_4_1">ДА</label></li>
-                <input type="radio" name="ques-4" id="ques_4_2">
-                <li><label for="ques_4_2">НЕТ</label></li>
-              </ul>
-            </div> -->
-
-
 
             <div class="calc-ques">
               <p clss="ques-caption">У вас есть проблемы с овуляцией?</p>
@@ -182,20 +168,66 @@
     </form>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
+      var list = document.getElementById('drop_list');
       document.getElementById('droper_list').onclick = function() {
-        if( document.getElementById('drop_list').className == 'drop-list hidden' ){
-          $(document.getElementById('drop_list')).removeClass('hidden');
-          $(document.getElementById('drop_list')).addClass('active');
+        if( list.className == 'drop-list hidden' ){
+          $(list).removeClass('hidden');
+          $(list).addClass('active');
         }
         else{
-          $(document.getElementById('drop_list')).removeClass('active');
-          $(document.getElementById('drop_list')).addClass('hidden');
+          $(list).removeClass('active');
+          $(list).addClass('hidden');
         }
       }
+
       document.getElementById('drop_list').onclick = function() {
-        $(document.getElementById('drop_list')).removeClass('active');
-        $(document.getElementById('drop_list')).addClass('hidden');
+        $(list).removeClass('active');
+        $(list).addClass('hidden');
       }
+
+      document.getElementById('next').onclick = function() {
+        var opt = document.getElementsByClassName('long_pregnant');
+        for( i = 0 ; i < opt.length ; i++ ){
+          if(  opt[i].selected ){
+            if( opt[opt.length-1].selected ){
+              document.getElementById('next').setAttribute('disabled', 'true');
+              break;
+            }
+            opt[i].removeAttribute('selected');
+            opt[i+1].setAttribute('selected', '');
+            document.getElementById('next').removeAttribute('disabled');
+            document.getElementById('prev').removeAttribute('disabled');
+            break;
+          }
+        }
+      }
+      document.getElementById('prev').onclick = function() {
+        var opt = document.getElementsByClassName('long_pregnant');
+        for( i = 0 ; i < opt.length ; i++ ){
+          if(  opt[0].selected ) {
+            document.getElementById('prev').setAttribute('disabled', 'true');
+            break;
+          }
+          if(  opt[i].selected ){
+            opt[i].removeAttribute('selected');
+            opt[i-1].setAttribute('selected', '');
+            document.getElementById('prev').removeAttribute('disabled');
+            document.getElementById('next').removeAttribute('disabled');
+            break;
+          }
+        }
+      }
+        // $('#select_1').mousedown(function(event) {
+        //   if (event.which == 3) {
+        //     var a = $(this).children().filter(':selected').index();
+        //     $(this).find('option:eq('+ (a+1) +')').attr("selected","selected");
+        //   }
+        // });
+      // document.getElementById('next').onclick = function() {
+      //   var sel = document.getElementById('select_1');
+      //     var a = $(sel).children().filter(':selected').index();
+      //     $(sel).find('option:eq('+ (a+1) +')').attr("selected","selected");
+      // };
     </script>
   </body>
 </html>
