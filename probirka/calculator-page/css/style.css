@@ -7,47 +7,52 @@
     display: inline-block;
     position: relative;
     background-color: #d9e1e5;
-    width: 80%;
-    margin-left:50px;
+    /*width: 80%;*/
+    margin-left:20px;
     padding: 30px;
     font-family: 'Roboto', sans-serif;
   }
+
+  .calc-content{
+    margin-top: -30px;
+  }
+  @media(max-width:767px){
+    .calc{
+      padding: 5px;
+    }
+    .calc-content{
+      margin-top: -5px;
+    }
+  }
   /*Шапка калькулятора*/
-    .calc-caprion{
+    .calc-caption{
       display: inline-block;
-      position: absolute;
-      width: 90%;
-      top:0;
-      left:0;
+      position: relative;
+      width: 100%;
+      margin-left: -55px;
       background:linear-gradient(to left,#0b8196,#01abc9,#0b8196);
       color:#fff;
-      box-shadow: 0 3px 5px #999;
+      box-shadow: 1px 3px 1px #aaa;
+
     }
-    .calc-caprion p{
+    .calc-caption p{
       font-size: 14px;
       text-align: center;
       font-weight: 500;
+      padding: 0 10px;
     }
     /*уголки*/
-      .calc-caprion::after{
+      .calc-caption::after{
         content: '';
         display: block;
-        background:linear-gradient(to right bottom,#0b8196 50%,transparent 50%);
-        height: 100%;
         position: absolute;
+        height: 100%;
         left:100%;
-        right: -11.1%;
+        right: -85px;
         top:0;
+        background:linear-gradient(to right bottom,#0b8196 50%,rgba(0,0,0,0.4) 50%,transparent 55%);
       }
-      .calc-before{
-        position: absolute;
-        right: 100%;
-        width: 25px;
-        height: 100%;
-        background-color: #0b8196;
-        box-shadow: -3px 3px 3px #999;
-      }
-      .calc-before::before{
+      .calc-caption::before{
         content: '';
         display: block;
         position: absolute;
@@ -56,7 +61,16 @@
         top:100%;
         left:0;
         background:linear-gradient(to left bottom,#0b8196 50%,transparent 50%);
-        box-shadow:inset 0 15px 1px rgba(), -3px 0 3px #999;
+      }
+      @media(max-width:767px){
+        .calc-caption{
+          margin-left: -30px;
+        }
+        .calc-caption::after{
+          right: -35px;
+          background: #0b8196;
+          box-shadow: 1px 3px 1px #aaa;
+        }
       }
     /*уголки*/
   /*Шапка калькулятора*/
@@ -68,11 +82,12 @@
     .calc-ques{
       display: inline-block;
       width: 49%;
-      margin-top: 5px;
+      margin: 0;
     }
     .calc-ques p{
       font-weight: 500;
       margin: 0;
+      margin-top: 10px;
     }
     .calc-ques input[type="radio"]{
       display: none;
@@ -85,7 +100,9 @@
     }
     .calc-ques ul li{
       display: inline-block;
-      margin-right: 50px;
+    }
+    .calc-ques ul li:nth-child(2){
+        margin-right: 40px;
     }
     .select-but{
       margin-right: 10px !important;
@@ -109,59 +126,155 @@
     .calc-ques input[type="radio"]:checked+li label{
       background-color: #007e97;
     }
-    .calc-ques .drop-selcet{
-      margin: 0;
-      background-color:#fff;
-      vertical-align: top;
-      border-radius: 0;
-      margin-left: -3px;
-      border-left: 1px solid #aaa;
-      width: 40px;
-    }
-    .drop-selcet-select{
-      margin-left: -43px !important;
-
-    }
-    .calc-ques .drop-selcet:hover{
-      background-color: #fff;
-    }
-    .calc-ques input[type="text"]{
-      display: inline-block;
-      width: 115px;
-      padding: 0 7px;
-      height: 50px;
-      border: 0;
-      outline: none;
-    }
     .select-blok{
       display: inline-block;
+      position: relative;
       width: 170px;
-      vertical-align: top;
       height: 50px;
+      vertical-align: top;
       border-radius: 5px;
       border: 1px solid #aaa;
-      overflow: hidden;
-      white-space: nowrap;
       margin-top: 10px;
+      margin-right: 10px;
+      white-space: nowrap;
     }
-    select{
-      height: 50px;
-      padding: 0 7px;
-      width: 100%;
-      border: none;
-      outline: none;
-      -webkit-appearance:none;
-      position: relative;
-      background: linear-gradient(to right, #fff 120px, transparent 120px);
-    }
-    select::before{
-      content: '';
-      position: absolute;
-      display: inline-block;
-      right: 40px;
-      height: 50px;
-      width: 1px;
-      background-color: #aaa;
+    /*Имитация селекта*/
+     .calc-ques .droper-list{
+        position: relative;
+        margin: 0;
+        background-color:#fff;
+        vertical-align: top;
+        border-radius: 0;
+        border: none;
+        outline: none;
+        margin-left: -4px;
+        border-left: 1px solid #aaa;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: 35px;
+        height: 100%;
+      }
+      .droper-list::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top:50%;
+        left:50%;
+        margin-top: -7px;
+        margin-left: -7px;
+        width:12px;
+        height: 12px;
+        background: linear-gradient(to top left,#00abc9 50%,transparent 50%);
+        transform:rotate(45deg);
+      }
+      .calc-ques .drop-selcet:hover{
+        background-color: #fff;
+      }
+      .calc-ques input[type="text"]{
+        display: inline-block;
+        width: 121px;
+        padding: 0 7px;
+        height: 50px;
+        border: 0;
+        outline: none;
+        color:#aaa;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      .drop-list{
+        position: absolute;
+        list-style: none;
+        /*width: 100%;*/
+        left: -1px;
+        right: -1px;
+        top:47px;
+        border: 1px solid #aaa;
+        background-color: #fff;
+        margin: 0 !important;
+        padding: 0;
+        z-index: 3;
+      }
+      .drop-list.hidden{
+          display: none;
+      }
+      .drop-list.active{
+        display: block;
+      }
+      .drop-list>li{
+        display: block !important;
+        margin: 0 !important;
+
+      }
+      .drop-list .drop-list-item{
+          padding: 5px;
+          text-align: left;
+          background-color: #fff;
+          color:#000;
+          display: block;
+          width: 100%;
+          height: auto;
+          font-weight: normal;
+          font-size: 12px;
+          border-radius: 0;
+      }
+      .drop-list .drop-list-item:hover{
+        color:#fff;
+      }
+    /*Имитация селекта*/
+
+    /*селект*/
+      .droper::before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top:0;
+        height: 100%;
+        width: 34px;
+        border-left:1px solid #aaa;
+        background-color: #fff;
+        cursor: pointer;
+      }
+      .droper::after{
+        content: '';
+        display: block;
+        position: absolute;
+        top:50%;
+        margin-top: -7px;
+        right:12px;
+        width:12px;
+        height: 12px;
+        background: linear-gradient(to top left,#00abc9 50%,transparent 50%);
+        transform:rotate(45deg);
+      }
+      .calc-ques select{
+        position: relative;
+        -webkit-appearance:none;
+        -moz-appearance: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 50px;
+        padding: 0 7px;
+        background: linear-gradient(to right, #fff 135px, transparent 135px);
+        cursor: pointer;
+        z-index: 1;
+        color: #aaa;
+      }
+      .select-stub{
+        position: absolute;
+        top:0;
+        left:0;
+        height: 50px;
+        width:135px;
+        z-index: 2;
+      }
+    /*селект*/
+    @media(max-width:989px){
+      .calc-ques{
+        text-align: center;
+        width: 100%;
+      }
     }
   /*Вопросы*/
 /**************

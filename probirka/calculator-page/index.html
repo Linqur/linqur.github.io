@@ -9,9 +9,8 @@
   <body>
     <form class="" action="index.html" method="post">
       <div class="calc">
-        <div class="calc-contant">
-          <div class="calc-caprion">
-            <div class="calc-before"></div>
+        <div class="calc-content">
+          <div class="calc-caption">
             <p>РАССЧИТАЙТЕ ВАШЫ ШАНСЫ ИМЕТЬ РЕБЕНКА ПОСЛЕ ОДНОГО ИЛИ
               НЕСКОЛЬКИХ ПОЛНЫХ ЦИКЛОВ ЛЕЧЕНИЯ ЭКО</p>
           </div>
@@ -41,9 +40,67 @@
                 <option>20</option>
               </select> -->
               <div class="select-blok">
-                <input type="text" name="select" value="1" id="select_age">
-                <label  class="drop-selcet" for="select_age"></label>
+                <input type="text" name="select" id="select_age" pattern="[0-9]+$" required>
+                <button type="button" class="droper-list" id="droper_list"></button>
+                <ul class="drop-list hidden" id="drop_list">
+                  <li>
+                    <input type="radio" name="select" id="select_1">
+                    <label class="drop-list-item" for="select_1">1</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_2">
+                    <label class="drop-list-item" for="select_2">2</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_3">
+                    <label class="drop-list-item" for="select_3">3</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_4">
+                    <label class="drop-list-item" for="select_4">4</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_5">
+                    <label class="drop-list-item" for="select_5">5</label>
+                  </li>
+
+                </ul>
               </div>
+                <ul>
+                  <li class="select-but"><label for="select_age">-</label></li>
+                  <li class="select-but"><label for="select_age">+</label></li>
+                </ul>
+                <p clss="ques-caption">Сколько лет вы пытаетесь забеременеть?</p>
+                <div class="select-blok droper">
+                  <select id="select_1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                  </select>
+                  <div class="select-stub"></div>
+                  <!-- <label  class="drop-selcet drop-selcet-select" for="select_1"></label> -->
+                </div>
                 <ul>
                   <li class="select-but"><label for="select_1">-</label></li>
                   <li class="select-but"><label for="select_1">+</label></li>
@@ -58,42 +115,6 @@
                 <input type="radio" name="ques-3" id="ques_3_2">
                 <li><label for="ques_3_2">НЕТ</label></li>
               </ul>
-            </div>
-
-            <div class="calc-ques">
-              <p clss="ques-caption">Сколько лет вы пытаетесь забеременеть?</p>
-              <div class="select-blok">
-                <select id="select_1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                  <option>11</option>
-                  <option>12</option>
-                  <option>13</option>
-                  <option>14</option>
-                  <option>15</option>
-                  <option>16</option>
-                  <option>17</option>
-                  <option>18</option>
-                  <option>19</option>
-                  <option>20</option>
-                </select>
-                <!-- <label  class="drop-selcet drop-selcet-select" for="select_1"></label> -->
-              </div>
-              <ul>
-                <li class="select-but"><label for="select_1">-</label></li>
-                <li class="select-but"><label for="select_1">+</label></li>
-              </ul>
-            </div>
-
-            <div class="calc-ques">
               <p clss="ques-caption">Есть ли у вас проблемы мужского фактора бесплодия?</p>
               <ul>
                 <input type="radio" name="ques-4" id="ques_4_1">
@@ -102,6 +123,17 @@
                 <li><label for="ques_4_2">НЕТ</label></li>
               </ul>
             </div>
+
+
+            <!-- <div class="calc-ques">
+              <p clss="ques-caption">Есть ли у вас проблемы мужского фактора бесплодия?</p>
+              <ul>
+                <input type="radio" name="ques-4" id="ques_4_1">
+                <li><label for="ques_4_1">ДА</label></li>
+                <input type="radio" name="ques-4" id="ques_4_2">
+                <li><label for="ques_4_2">НЕТ</label></li>
+              </ul>
+            </div> -->
 
 
 
@@ -148,5 +180,22 @@
         </div>
       </div>
     </form>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+      document.getElementById('droper_list').onclick = function() {
+        if( document.getElementById('drop_list').className == 'drop-list hidden' ){
+          $(document.getElementById('drop_list')).removeClass('hidden');
+          $(document.getElementById('drop_list')).addClass('active');
+        }
+        else{
+          $(document.getElementById('drop_list')).removeClass('active');
+          $(document.getElementById('drop_list')).addClass('hidden');
+        }
+      }
+      document.getElementById('drop_list').onclick = function() {
+        $(document.getElementById('drop_list')).removeClass('active');
+        $(document.getElementById('drop_list')).addClass('hidden');
+      }
+    </script>
   </body>
 </html>
