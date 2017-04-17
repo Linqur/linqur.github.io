@@ -19,34 +19,33 @@ document.getElementById('drop_list').onclick = function() {
 
 /*пере*/
 document.getElementById('next').onclick = function() {
+  document.getElementById('next').removeAttribute('disabled');
+  document.getElementById('prev').removeAttribute('disabled');
   var opt = document.getElementsByClassName('long_pregnant');
   for( i = 0 ; i < opt.length ; i++ ){
-
     if( opt[i].selected ){
+      opt[i].removeAttribute('selected');
+      opt[i+1].setAttribute('selected', '');
       if( opt[opt.length-1].selected ){
         document.getElementById('next').setAttribute('disabled', 'true');
         break;
       }
-      opt[i].removeAttribute('selected');
-      opt[i+1].setAttribute('selected', '');
-      document.getElementById('next').removeAttribute('disabled');
-      document.getElementById('prev').removeAttribute('disabled');
       break;
     }
   }
 }
 document.getElementById('prev').onclick = function() {
+  document.getElementById('next').removeAttribute('disabled');
+  document.getElementById('prev').removeAttribute('disabled');
   var opt = document.getElementsByClassName('long_pregnant');
   for( i = 0 ; i < opt.length ; i++ ){
-    if(  opt[0].selected ) {
-      document.getElementById('prev').setAttribute('disabled', 'true');
-      break;
-    }
     if(  opt[i].selected ){
       opt[i].removeAttribute('selected');
       opt[i-1].setAttribute('selected', '');
-      document.getElementById('prev').removeAttribute('disabled');
-      document.getElementById('next').removeAttribute('disabled');
+      if( opt[0].selected ) {
+        document.getElementById('prev').setAttribute('disabled', 'true');
+        break;
+      }
       break;
     }
   }
