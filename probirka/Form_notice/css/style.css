@@ -12,6 +12,13 @@
      padding: 30px;
      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
    }
+   .appointment-caption::before,.appointment-caption::after{
+     content: '';
+     display: block;
+   }
+   .appointment-caption::after{
+     clear: both;
+   }
  /*форма*/
 
  /*поля*/
