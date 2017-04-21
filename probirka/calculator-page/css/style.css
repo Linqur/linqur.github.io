@@ -285,14 +285,6 @@
         border-top-left-radius:5px;
         border-bottom-left-radius:5px;
       }
-      .select-stub{
-        position: absolute;
-        top:0;
-        left:0;
-        height: 50px;
-        width:134px;
-        z-index: 2;
-      }
     /*селект*/
     @media(max-width:989px){
       .calc-ques{

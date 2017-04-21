@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .cont{
+        position: relative;
+        display: inline-block;
+        margin: 100px;
+        width: 270px;
+        height: 310px;
+
+      }
+      .img,.inf{
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .img{
+        background-color: orange;
+        z-index: 1;
+        top:0;
+        left:0;
+      }
+      .inf{
+        background-color: #aaa;
+        z-index: 0;
+        transform: scale(0.3);
+        right: 0;
+        bottom:0;
+      }
+      .img-animation{
+        animation: imgOn 1.2s forwards;
+      }
+      .inf-animation{
+        animation: infOn 1.2s forwards;
+      }
+      .img-animation-off{
+        animation: imgOff 1.2s forwards;
+      }
+      .inf-animation-off{
+        animation: infOff 1.2s forwards;
+      }
+      @keyframes imgOn {
+        0%   {top: 0; left:0; transform: scale(1); z-index: 1;}
+        50%  {top: -50px; left:-81px; transform: scale(0.6);}
+        100% {top:0; left:0; transform: scale(0.3); z-index:0;}
+      }
+      @keyframes infOn {
+        0%   {bottom:0; right:0; transform: scale(0.3); z-index:0;}
+        50%  {bottom: -50px; right:-81px; transform: scale(0.6);}
+        100% {bottom:0; right:0; transform: scale(1); z-index:1;}
+      }
+      @keyframes imgOff {
+          0%   {top: 0; left:0; transform: scale(0.6);}
+          50%  {top: -50px; left:-81px; transform: scale(0.6);}
+          100% {top:0; left:0; transform: scale(1); z-index:1;}
+      }
+      @keyframes infOff {
+        0%   {bottom:0; right:0; transform: scale(1); z-index:1;}
+        50%  {bottom: -50px; right:-81px; transform: scale(0.6);}
+        100% {bottom:0; right:0; transform: scale(0.3); z-index:0;}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont" id="cont">
+      <div class="img" id="img">
+
+      </div>
+      <div class="inf" id="inf">
+
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+      document.getElementById('cont').onmouseover = function(){
+        $(document.getElementById('img')).addClass('img-animation');
+        $(document.getElementById('inf')).addClass('inf-animation');
+        $(document.getElementById('img')).removeClass('img-animation-off');
+        $(document.getElementById('inf')).removeClass('inf-animation-off');
+      }
+      document.getElementById('cont').onmouseout = function(){
+        $(document.getElementById('img')).removeClass('img-animation');
+        $(document.getElementById('inf')).removeClass('inf-animation');
+        $(document.getElementById('img')).addClass('img-animation-off');
+        $(document.getElementById('inf')).addClass('inf-animation-off');
+      }
+    </script>
+  </body>
+</html>
