@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="content">
+        <h2 class="appointment-caption">Запись на прием</h2>
+        <form action="index.html" method="post">
+          <div class="appointment">
+          <label class="field-caption" for="your-name">Ваше имя</label>
+          <input type="text" id="your-name"  required>
+          <label class="field-caption" for="phone">Ваш телефон</label>
+          <input type="text" id="phone"  required>
+          <label class="field-caption" for="e-mail">Ваш e-mail</label>
+          <input type="text" id="e-mail" required pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+          <label class="field-caption" for="message">Введите ваше сообщение</label>
+          <textarea id="message"  required></textarea>
+          <input type="checkbox" id="check"><!--спрятаный чекбокс с привязанным лейблом-->
+          <div class="check-blok">
+            <label for="check" class="check"><img src="images/check.png"></label>
+              <label for="check" class="check-text">Я подтверждаю, что в
+                соответствии с требованиями “Федерального закона
+                <a href="#">О персональных данных</a> № 152-ФЗ” и в соответствии с
+                <a href="#">Условиями</a> даю согласие на обработку моих
+                персональных данных.</label>
+          </div>
+          <hr>
+          <p class="submit-pos">
+            <button type="submit" name="button" id='sub' disabled="true">ЗАПИСАТЬСЯ НА ПРИЁМ</button>
+          </p>
+          </div>
+        </form>
+    </div>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Услага</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="slick/slick.css">
+	<link rel="stylesheet" href="slick/slick-theme.css">
+	<link rel="stylesheet" href="css/arial.css">
+	<link rel="stylesheet" type="text/css" href="css/service.css">
+</head>
+<body>
+	<header class="navbar nav-panel">
+            <div class="navbar-header" >
+            	<a href="index.html" class="">
+            		<img src="img/logo.png" class="logo-xs-screen">
+            	</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="nav">
+            	<div class="row">
+	                <ul class="nav navbar-nav">
+	                	<li class="logo"><a href="index.html" class="logo-link"><img src="img/logo.png"></a></li>
+	                    <li class="nav-list-point"><a href="index.html">Главная</a></li>
+	                    <li class="nav-list-point"><a href="index.html#about">О компании</a></li>
+	                    <li class="nav-list-point"><a href="index.html#beliv">Партнеры</a></li>
+	                    <li class="nav-list-point"><a href="index.html#comments">Отзывы</a></li>
+	                    <li class="nav-list-point"><a href="index.html#contacts">Контакты</a></li>
+	                    <li class="phone">
+	                    	<img src="img/phone.png">
+	                    	<ul>
+	                    		<li><a href="tel:+79179014373" class="phone-link light"> 8 (917) 901-43-73</a></li>
+	                    		<li><a href="tel:+78552597618" class="phone-link light"> 8 (8552) 59-76-18</a></li>
+	                    	</ul>
+	                    </li>
+	                </ul>
+	            </div>
+            </div> 
+    </header>
+
+    <section class="service block">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-3">
+    				<div class="categories">
+    					<p class="section-title lg-screen">НАШИ УСЛУГИ</p>
+    					<button class="section-title service-button" data-toggle="collapse" data-target="#service-list" aria-expanded="false" aria-controls="navbar">НАШИ УСЛУГИ 		
+    					</button>
+    					<ul class="navbar-collapse collapse" id="service-list">
+    						<li><a href="#" class="service-link active">СВЕТОВЫЕ ВЫВЕСКИ</a></li>
+    						<li><a href="#" class="service-link">ЭЛЕКТРОННЫЕ ТАБЛО</a></li>
+    						<li><a href="#" class="service-link">НОВОГОДНЕЕ ОФОРМЛЕНИЕ</a></li>
+    						<li><a href="#" class="service-link">ЛАЗЕРНАЯ ГРАВИРОВКА</a></li>
+    						<li><a href="#" class="service-link">АРХИТЕКТУРНАЯ ПОДСВЕТКА</a></li>
+    						<li><a href="#" class="service-link">СОГЛАСОВАНИЕ</a></li>
+    						<li><a href="#" class="service-link">МОНТАЖНЫЕ РАБОТЫ</a></li>
+    						<li><a href="#" class="service-link">РАЗНОЕ</a></li>
+    					</ul>
+    				</div>
+    			</div>
+    			<div class="col-md-9">
+    				<p class="section-title">СВЕТОВЫЕ ВЫВЕСКИ</p>
+    				<p class="text-info" id="service-text">Предлагаем Вашему вниманию изготовление вывесок (объемные световые буквы, 
+					несветовые вывески, планшетныевывески, световые короба, крышные конструкции) 
+					соответствующие последним тенденциям мира светодиодной рекламы. Вас приятно 
+					порадует сочетание цены и качества нашей продукции, а так же гарантийный срок 
+					обслуживания – 2 года. Более чем 15-летний опыт  работы со светодиодными 
+					технологиями позволяет нам изготавливать вывески высокой сложности. Так же 
+					Вы можете заказать у нас услугу согласования наружной рекламы.
+					</p>
+					<script type="text/javascript">
+						var json = '{ "text" : "text qwerty", "ImgLinks" : ["img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png","img/service/Pharm.png"]}';
+						var obj = JSON.parse(json);	
+						var imgs = document.getElementsByClassName('service-img-block');
+						var checkSeeLink = 1;
+						var numimgs = 0;
+						document.write('<div id="img-container" class="img-container" height="">');
+						for (var i = 0 ; i < obj.ImgLinks.length ; i++) {
+								document.write(''+
+									'<div class="col-md-4 col-sm-6 col-xs-12 ">'+
+										'<div class="row">'+
+											'<div class="service-img-block">'+
+												'<img class="service-img" src="'+obj.ImgLinks[i]+'">'+
+											'</div>'+
+										'</div>'+
+									'</div>');
+						}
+						document.write('</div>');
+						if (window.innerWidth > 991){
+							numimgs = 6;
+							for (var i = 0 ; i < numimgs ; i++) {
+									imgs[i].className = "service-img-block active";
+							}	
+							if ( obj.ImgLinks.length > numimgs ){
+								document.write('<div class="see-all-block"><button type="button" class="see-all" id="see-link">Показать все</button></div>');
+							}
+						}
+						else if (window.innerWidth <= 991 && window.innerWidth > 767){
+							numimgs = 4;
+							for (var i = 0 ; i < numimgs ; i++) {
+									imgs[i].className = "service-img-block active";
+							}	
+							if ( obj.ImgLinks.length > numimgs ){
+								document.write('<div class="see-all-block"><button type="button" class="see-all" id="see-link">Показать все</button></div>');
+							}
+						}	
+						else{
+							numimgs = 3;
+							for (var i = 0 ; i < numimgs ; i++) {
+									imgs[i].className = "service-img-block active";
+							}	
+							if ( obj.ImgLinks.length > numimgs ){
+								document.write('<div class="see-all-block"><button type="button" class="see-all" id="see-link">Показать все</button></div>');
+							}
+						}
+						document.getElementById('see-link').onclick = function(){	
+							if(checkSeeLink){	
+								if (window.innerWidth > 767){
+									$('.img-container').height((document.getElementsByClassName('service-img')[0].offsetWidth/1.58)*2+26+"px");
+								}
+								else {
+									$('.img-container').height((document.getElementsByClassName('service-img')[0].offsetWidth/1.58)*3+44+"px");
+								}
+								document.getElementById('img-container').className = "img-container active";
+								document.getElementById('see-link').innerHTML = 'Скрыть';
+								for (var i = numimgs ; i < imgs.length ; i++) {
+									imgs[i].className = "service-img-block active";
+								}
+								checkSeeLink = 0;
+							}
+							else{
+								if (window.innerWidth > 767){
+									$('.img-container').height("");
+								}
+								else {
+									$('.img-container').height("");
+								}
+								document.getElementById('img-container').className = "img-container";
+								document.getElementById('see-link').innerHTML = 'Показать все';
+								for (var i = numimgs ; i < imgs.length ; i++) {
+									imgs[i].className = "service-img-block";
+								}
+								checkSeeLink = 1;
+							}
+						}	
+					</script>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    <footer>
+		<div class="container">
+			<div class="row">
+				<div class="footer-body">
+					<div class="col-lg-3  col-sm-12 form">
+						<h3>Напишите нам</h3>
+						<form method="post">
+							<input id="name" type="text" placeholder="Имя" required>
+							<input id="mail" type="text" placeholder="E-mail" required>
+							<textarea id="comment" type="text-area" placeholder="Комментарий" required rows="3"></textarea>
+							<button type="submit">Отправить заявку</button>
+						</form>
+					</div>
+
+					<div class="col-lg-offset-1 col-lg-1 col-sm-12 footer-menu">
+						<div class="row">
+							<h3>Меню</h3>
+							<button class="menu-button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">МЕНЮ
+    						</button>
+							<ul class="navbar-collapse collapse" id="menu">
+								<li><a href="index.html#main">Главная</a></li>
+								<li><a href="index.html#about">О компании</a></li>
+								<li><a href="index.html#beliv">Партнеры</a></li>
+								<li><a href="index.html#comments">Отзывы</a></li>
+								<li><a href="#contacts">Контакты</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-offset-1 col-lg-3 col-sm-12 map">
+						<div class="row">
+							<div id="map" class="mymap"></div>
+						</div>	
+					</div>
+					<div id="contacts" class="col-lg-3 col-sm-12 contacts">
+						<h3>Контакты</h3>
+						<ul>
+							<li><p>г. Набережные Челны,<wbr> Шишкинский б-р,<wbr> д.8(30/24),<wbr> 3 подъезд 4 этаж,<wbr> офис 30</p></li>
+							<li><p><span>Тел:</span> 8 (8552) 38-82-60<wbr>  8 (8552) 59-76-18<wbr>  8 (917) 901-43-73</p></li>
+							<li><p><span>E-mail:</span> com@zo-diak.com<wbr> laser-m300@mail.ru.</p></li>
+						</ul>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="js/jquery-3.2.0.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script>		
+	<script type="text/javascript" src="js/scroll.js"></script>	
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>	
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

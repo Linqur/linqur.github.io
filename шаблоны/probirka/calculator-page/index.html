@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="index.html" method="post">
+      <div class="calc">
+        <div class="calc-content">
+          <div class="calc-caption">
+            <p>РАССЧИТАЙТЕ ВАШЫ ШАНСЫ ИМЕТЬ РЕБЕНКА ПОСЛЕ ОДНОГО ИЛИ
+              НЕСКОЛЬКИХ ПОЛНЫХ ЦИКЛОВ ЛЕЧЕНИЯ ЭКО</p>
+              <i class="caption-shadow"></i>
+          </div>
+          <div class="calc-contant">
+            <div class="calc-ques">
+              <p clss="ques-caption">Ваш возраст:</p>
+              <div class="select-blok">
+                <input type="text" name="select" id="select_age" pattern="[0-9]+$" required>
+                <button type="button" class="droper-list" id="droper_list"></button>
+                <ul class="drop-list hidden" id="drop_list">
+                  <li>
+                    <input type="radio" name="select" id="select_1">
+                    <label class="drop-list-item" for="select_1">1</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_2">
+                    <label class="drop-list-item" for="select_2">2</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_3">
+                    <label class="drop-list-item" for="select_3">3</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_4">
+                    <label class="drop-list-item" for="select_4">4</label>
+                  </li>
+
+                  <li>
+                    <input type="radio" name="select" id="select_5">
+                    <label class="drop-list-item" for="select_5">5</label>
+                  </li>
+
+                </ul>
+              </div>
+                <ul>
+                  <li><button type="button" class="select-but">-</button></li>
+                  <li><button type="button" class="select-but">+</button></li>
+                </ul>
+                <p clss="ques-caption">Сколько лет вы пытаетесь забеременеть?</p>
+                <div class="select-blok droper">
+                  <select id="select">
+                    <option value="1" selected="true">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                  </select>
+                </div>
+                <ul class="scale">
+                  <li><button type="button" class="select-but" id="prev" disabled="true">-</button></li>
+                  <li><button type="button" class="select-but" id="next">+</button></li>
+                </ul>
+            </div>
+
+            <div class="calc-ques">
+              <p clss="ques-caption">Вы были беременны раньше ?</p>
+              <ul>
+                <input type="radio" name="ques-3" id="ques_3_1">
+                <li><label for="ques_3_1">ДА</label></li>
+                <input type="radio" name="ques-3" id="ques_3_2">
+                <li><label for="ques_3_2">НЕТ</label></li>
+              </ul>
+              <p clss="ques-caption">Есть ли у вас проблемы мужского фактора бесплодия?</p>
+              <ul>
+                <input type="radio" name="ques-4" id="ques_4_1">
+                <li><label for="ques_4_1">ДА</label></li>
+                <input type="radio" name="ques-4" id="ques_4_2">
+                <li><label for="ques_4_2">НЕТ</label></li>
+              </ul>
+            </div>
+
+            <div class="calc-ques">
+              <p clss="ques-caption">У вас есть проблемы с овуляцией?</p>
+              <ul>
+                <input type="radio" name="ques-1" id="ques_1_1">
+                <li><label for="ques_1_1">ДА</label></li>
+                <input type="radio" name="ques-1" id="ques_1_2">
+                <li><label for="ques_1_2">НЕТ</label></li>
+              </ul>
+            </div>
+
+            <div class="calc-ques">
+              <p clss="ques-caption">Есть ли у вас проблемы с вашими трубами?</p>
+              <ul>
+                <input type="radio" name="ques-5" id="ques_5_1">
+                <li><label for="ques_5_1">ДА</label></li>
+                <input type="radio" name="ques-5" id="ques_5_2">
+                <li><label for="ques_5_2">НЕТ</label></li>
+              </ul>
+            </div>
+
+            <div class="calc-ques">
+              <p clss="ques-caption">У вас есть необъяснимые проблемы рождаемости?</p>
+              <ul>
+                <input type="radio" name="ques-2" id="ques_2_1">
+                <li><label for="ques_2_1">ДА</label></li>
+                <input type="radio" name="ques-2" id="ques_2_2">
+                <li><label for="ques_2_2">НЕТ</label></li>
+              </ul>
+            </div>
+
+            <div class="calc-ques">
+              <p clss="ques-caption">Планируете ли вы ЭКО или ИКСИ?</p>
+              <ul>
+                <input type="radio" name="ques-6" id="ques_6_1">
+                <li><label for="ques_6_1">ДА</label></li>
+                <input type="radio" name="ques-6" id="ques_6_2">
+                <li><label for="ques_6_2">НЕТ</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js">
+    </script>
+  </body>
+</html>
