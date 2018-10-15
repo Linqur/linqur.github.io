@@ -16,7 +16,11 @@ $(document).ready(function(){
 $(document).on('click','.prev',function(){
 	for(var i = 0; i<$('.item').length;i++){
 		if($('.slider>.active')[0] == $('.item')[i]){
-			if(i==0){break;}
+			if(i==0){
+				$('.slider>.active').removeClass('active');
+				$('.item')[$('.item').length-1].className = 'item active';
+				break;
+			}
 			console.log(i);
 			$('.slider>.active').removeClass('active');
 			$('.item')[--i].className = 'item active';
@@ -27,7 +31,11 @@ $(document).on('click','.prev',function(){
 $(document).on('click','.next',function(){
 	for(var i = 0; i<$('.item').length;i++){
 		if($('.slider>.active')[0] == $('.item')[i]){
-			if(i==$('.item').length-1){break;}
+			if(i==$('.item').length-1){
+				$('.slider>.active').removeClass('active');
+				$('.item')[0].className = 'item active';
+				break;
+			}
 			console.log(i);
 			$('.slider>.active').removeClass('active');
 			$('.item')[++i].className = 'item active';

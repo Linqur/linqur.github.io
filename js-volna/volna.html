@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	body{
+		margin: 0;
+		background-color: #538721;
+	}
+	.voln{
+		width: 1.2rem;
+		padding:0;
+		margin: 0;
+		list-style: none;
+		position: absolute;
+		top:0;
+		left: 0;
+		line-height: 12px;
+	}
+	.voln>li{
+		/*transition: linear;*/
+		width: 1.2rem;	
+		/*margin-top: 5.5px;*/
+		/*margin-bottom: 5.5px;*/
+		height: 1px;
+		background-color: #ffe9d1;
+		display: inline-block;
+	}
+	.static{
+		width: 1.2rem !important;
+		background-color: #ffc486 !important;
+		/*margin-top: 5px !important;*/
+		/*margin-bottom: 5px !important;*/
+		height: 2px !important;
+	}
+	.main{
+		height: 100vh;
+		width: 100%;
+	}
+	.main>div{
+		height: 6px;
+		border-bottom: 1px solid #000;
+		margin-left: 12px;
+	}
+</style>
+<body>
+<div class="main">
+	<div ></div>
+	<!-- <form method="post"> -->
+		<!-- <input type="text" name="email"> -->
+		<!-- <button></button> -->
+	<!-- </form> -->
+</div>
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	/*Добавление волн*/
+	var h = $('body').height();
+	var voln = '<ul class="voln">';
+	for (var i = 0; i < h-12; i+=12){
+		voln +='<li class="static" zone="'+(i+10)+'"></li>';
+	}
+	voln +='</ul>';
+	$('body').append(voln);
+	$('.voln').css('height',h);
+	var lines = $('.voln>li');
+	/*Добавление волн*/
+
+	function get_range(a,b,x){
+		var x = (x<=70)?1:((80-(x-70))*0.0125);
+		var k = (a==b)?1:((50-(b-a))*0.02);
+		var rev_k = 1-k;
+		var result = (rev_k>0)?(0.08/(0.75*rev_k)).toFixed(2):1;
+		if (result>1){
+			result = 1;
+		}
+		result*= x;
+		// console.log(result.toFixed(2));
+		return result.toFixed(2);
+	}
+	$('body').on('mousemove',function(){
+		var y = event.clientY;
+        var x = event.clientX;
+        $(lines).addClass('static');
+        if(x < 150){
+        	$(lines).each(function(){
+        		var zone = $(this).attr('zone');
+        		if(y-50 < zone && zone <= y+50){
+        			if(y < zone){
+        				w = 1.2+7*get_range(y,zone,x);
+        				console.log(w);
+        			}
+        			else{
+        				w = 1.2+7*get_range(zone,y,x);	
+        				console.log(w);
+        			}
+        			$(this).removeClass('static');
+        			$(this).css('width',w+'rem');
+        		}
+        	});
+        }
+	});
+</script>
+</body>
+</html>
+
+1.2+7*k
