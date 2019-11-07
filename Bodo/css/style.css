@@ -588,6 +588,7 @@ Education / Employement
     height: 3px;
     background-color: #777;
     bottom:0;
+    left: 0;
     transform: scaleX(0);
     transition-duration: 0.2s;
   }
